@@ -13,5 +13,5 @@ This project is a part of CSE533/333: Computer Graphics.
 * If you have Jupyter Notebook installed, run CG_Project.ipynb
 
 ### Usage:
-* Use terminal to run: `python CG_Project.py`
+* Use terminal to run: `python CG_Project_12.py`
 * The program will display all images in the order of generation.
