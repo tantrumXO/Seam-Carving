@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[30]:
+# In[1]:
 
 
 import numpy as np
@@ -10,7 +10,7 @@ from matplotlib.pyplot import imshow
 from PIL import Image
 
 
-# In[31]:
+# In[2]:
 
 
 # Opening Image
@@ -21,14 +21,14 @@ print(img.size)
 imshow(np.asarray(img))
 
 
-# In[32]:
+# In[3]:
 
 
 img_array = np.array(img)
 print(img_array.shape)
 
 
-# In[33]:
+# In[4]:
 
 
 # Energy Calculation (M1.1)
@@ -76,14 +76,14 @@ for i in range(img_array.shape[0]):
         dy_b = int(neighbors['up'][2]) - int(neighbors['down'][2])
         dy = (dy_r ** 2) + (dy_g ** 2) + (dy_b ** 2)
         
-        e = np.sqrt(dx + dy)
+        e = np.sqrt(dx) + np.sqrt(dy)
         energy[i][j] = int(e)
 
 print(energy.shape)
 print(energy)
 
 
-# In[34]:
+# In[5]:
 
 
 # Displaying Energy (M1.2)
@@ -93,7 +93,7 @@ energy_img = Image.fromarray(energy)
 imshow(np.asarray(energy_img))
 
 
-# In[35]:
+# In[6]:
 
 
 # Computing Seams (M2)
@@ -115,7 +115,7 @@ for i in range(1, dp_vertical.shape[0]):
 pd.DataFrame(dp_vertical)
 
 
-# In[36]:
+# In[7]:
 
 
 seams = []
@@ -177,7 +177,7 @@ seams.append(vertical_seam(dp_vertical))
 print(seams)
 
 
-# In[37]:
+# In[8]:
 
 
 for coord in seams[0]:
